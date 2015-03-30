@@ -4,7 +4,7 @@
 // task order
 //- Clean dist directory
 //- Copy file to dist directory
-//- Compile less, sass, coffee script into dist directory
+//- Compile less, sass, coffee scripts into dist directory
 //- Concat css, js both to be single file in dist directory
 //- Compressor css and js file in dist directory
 //- Injector css and js file to html
@@ -94,7 +94,7 @@ module.exports = function (grunt){
                     relative: true,
                     transform: function (filePath){
                         var filePath = filePath.replace('/dist/', '');
-                        return '<script src="' + filePath + '"></script>';
+                        return '<scripts src="' + filePath + '"></scripts>';
                     },
                     starttag: '<!-- injector:js -->',
                     endtag: '<!-- endinjector -->'
@@ -113,7 +113,7 @@ module.exports = function (grunt){
                 }
             },
             js: {
-                files: '*.js',
+                files: 'scripts/*.js',
                 options: {
                     livereload: true
                 }
